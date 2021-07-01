@@ -86,7 +86,7 @@
   {% for i in video %}
   <tbody>
     <tr>
-      <th scope="row">{{i.get_filesize|filesizeformat}}</th>
+      <th scope="row">{{i.filesize}}</th>
       <td>{{i.resolution}}</td>
       <td>{{i.type}}</td>
       <td> <form action="{% url 'downloaded' i.resolution %}" method="POST">

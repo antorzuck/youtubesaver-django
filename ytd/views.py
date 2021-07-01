@@ -5,7 +5,6 @@ from django.http import FileResponse
 from pytube import YouTube
 import re
 import os
-import pafy
 
 #homepage
 
@@ -17,7 +16,7 @@ def home(request):
 def download(request):
 	global url
 	url=request.GET.get('url')
-	yt=pafy.new(url)
+	yt=YouTube(url)
 	video=[]
 	video=yt.streams.filter(progressive=True).all()
 	embed_link=url.replace( "watch?v=", "embed/")
